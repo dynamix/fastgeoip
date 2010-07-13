@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fastgeoip}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Martin Karlsch"]
@@ -24,9 +24,25 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "ext/GeoIP.c",
+     "ext/GeoIP.h",
+     "ext/GeoIPCity.c",
+     "ext/GeoIPCity.h",
+     "ext/GeoIP_internal.h",
+     "ext/extconf.h",
+     "ext/extconf.rb",
+     "ext/fastgeoip.c",
+     "ext/global.h",
+     "ext/md5.c",
+     "ext/md5.h",
+     "ext/mkmf.log",
+     "ext/regionName.c",
+     "ext/ruby_geoip.h",
+     "ext/timeZone.c",
+     "ext/types.h",
+     "fastgeoip.gemspec",
      "lib/fastgeoip.rb",
-     "test/helper.rb",
-     "test/test_fastgeoip.rb"
+     "test/helper.rb"
   ]
   s.homepage = %q{http://github.com/dynamix/fastgeoip}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -34,8 +50,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Wrapper for MaxMind GeoIP based on net/geoip}
   s.test_files = [
-    "test/helper.rb",
-     "test/test_fastgeoip.rb"
+    "test/helper.rb"
   ]
 
   if s.respond_to? :specification_version then

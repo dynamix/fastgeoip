@@ -1,6 +1,24 @@
 = fastgeoip
 
-Small and simple wrapper for MaxMind GeoIP. Partly based on the MaxMind GeoIP C Code and the Net/GeoIP extension. 
+Small and simple wrapper for MaxMind GeoIP (country). Partly based on the MaxMind GeoIP C Code and the Net/GeoIP extension. 
+
+Currently the only supported operations are: 
+* open a database
+* ip to country iso code lookup
+
+... but it is fast ;-) 
+
+== How to use
+
+gem install fastgeoip
+
+Download the GeoIP database http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+
+  require 'fastgeoip'                   
+
+  db = FastGeoIp.open 'path-to-yor-data-file/GeoIP.dat'
+  db.country_code_by_addr('81.1.1.1') # should yield 'US'
+
 
 == Todo
        
