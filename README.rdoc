@@ -10,7 +10,7 @@ Currently the only supported operations are:
 
 == How to use
 
-gem install fastgeoip
+  gem install fastgeoip
 
 Download the GeoIP database http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
 
@@ -19,10 +19,14 @@ Download the GeoIP database http://geolite.maxmind.com/download/geoip/database/G
   db = FastGeoIp.open 'path-to-yor-data-file/GeoIP.dat'
   db.country_code_by_addr('81.1.1.1') # should yield 'US'
 
-
 == Todo
        
 * add tests
+
+== Changelog
+               
+0.2.0 - Ruby 1.9 support
+0.1.0 - initial release
 
 == Copyright
 

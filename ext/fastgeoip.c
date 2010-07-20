@@ -9,7 +9,7 @@ VALUE geoip_country_code_by_addr(VALUE self, VALUE addr) {
 
   Check_Type(addr, T_STRING);
   Data_Get_Struct(self, fast_geoip, fgi);
-  cc = (char *)GeoIP_country_code_by_addr(fgi->db, STR2CSTR(addr));
+  cc = (char *)GeoIP_country_code_by_addr(fgi->db, StringValuePtr(addr));
   if (cc == NULL) {
     return(Qnil);
   } else {
@@ -36,7 +36,7 @@ VALUE geoip_open(int argc, VALUE *argv, VALUE class) {
     rb_raise(rb_eArgError, "wrong number of arguments (needs 1 : filename of db)");
     
   fgi = ALLOC(fast_geoip);
-  fgi->db = GeoIP_open(STR2CSTR(filename), GEOIP_MEMORY_CACHE);
+  fgi->db = GeoIP_open( StringValuePtr(filename), GEOIP_MEMORY_CACHE);
   return(Data_Wrap_Struct(class, 0, geoip_free, fgi));
 }
 
